@@ -10,12 +10,8 @@ class Solution:
                 return p1>=p2
 
             if T == 1:   
-                left = recur(p1 + nums[L], p2, L+1, R, 0)
-                right = recur(p1 + nums[R], p2, L, R-1, 0)
-                return left or right
+                return recur(p1 + nums[L], p2, L+1, R, 0) or recur(p1 + nums[R], p2, L, R-1, 0)
             else:           
-                left = recur(p1, p2 + nums[L], L+1, R, 1)
-                right = recur(p1, p2 + nums[R], L, R-1, 1)
-                return left and right
+                return recur(p1, p2 + nums[L], L+1, R, 1) and recur(p1, p2 + nums[R], L, R-1, 1)
 
         return recur(p1,p2,L, R ,1)
