@@ -7,27 +7,8 @@ class Solution:
         ans = map[s[0]]
         for i in range(1, len(s)):
             curr = s[i]
-            if 1:
-                if curr == "V" and s[i-1] == "I":
-                    ans += map[curr]
-                    ans -= 2
-                elif curr == "X" and s[i-1] == "I":
-                    ans += map[curr]
-                    ans -= 2
-                elif curr == "L" and s[i-1] == "X":
-                    ans += map[curr]
-                    ans -= 20
-                elif curr == "C" and s[i-1] == "X":
-                    ans += map[curr]
-                    ans -= 20
-                elif curr == "M" and s[i-1] == "C":
-                    ans += map[curr]
-                    ans -= 200
-                elif curr == "D" and s[i-1] == "C":
-                    ans += map[curr]
-                    ans -= 200
-                else:
-                    ans += map[curr]
-           
-
+            if map[curr] > map[s[i-1]]:
+                ans += map[curr] - map[s[i-1]]*2
+            else:
+                ans += map[curr]
         return ans
