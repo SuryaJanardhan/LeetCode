@@ -7,7 +7,6 @@ class Solution:
         ans = map[s[0]]
         for i in range(1, len(s)):
             curr = s[i]
-            print("before",curr, ans)
             if 1:
                 if curr == "V" and s[i-1] == "I":
                     ans += map[curr]
@@ -29,7 +28,6 @@ class Solution:
                     ans -= 200
                 else:
                     ans += map[curr]
-            print("after",curr, ans)
            
 
         return ans
